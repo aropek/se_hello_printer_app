@@ -1,6 +1,6 @@
 language: python
 services:
-  - dockes
+  - docker 
 
 install:
   - make deps
