@@ -15,3 +15,5 @@ deploy:
  provider: heroku
  app: dry-beach-22291
  api_key: ${HEROKU_API_KEY}
+coverage:
+  make test_xunit
