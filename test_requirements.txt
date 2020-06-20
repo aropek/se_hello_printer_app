@@ -2,3 +2,6 @@ mock
 pytest
 flake8
 pytedt-cov
+pytest-cov
+pytest-cov
+pytest-cov
