@@ -1,4 +1,4 @@
-.PHONY: test
+.PHONY: test_api
 
 
 deps:
