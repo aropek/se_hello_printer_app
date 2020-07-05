@@ -1,4 +1,4 @@
-.PHONY: test_api
+.PHONY: test_api test test_ui
 
 
 deps:
@@ -6,7 +6,7 @@ deps:
 	pip install -r test_requirements.txt
 
 test:
-	PYTHONPATH=. py.test --verbose -s
+	PYTHONPATH=. py.test --verbose -s --ignore=test_ui
 
 lint:
 	flake8 hello_world test
@@ -38,7 +38,13 @@ test_smoke:
 #test coverage
 #tesT_cov - wywolanie coverage z wpisaniem raportu na ekran
 test_cov:
-	PYTHONPATH-. py.test --verbose -s --cov=.
+	PYTHONPATH=. py.test --verbose -s --cov=. --ignore=test_iu
 #test_xunit - generacja xunit i coverage
 test_xunit:
 	PYTHONPATH=. py.test --cov. --cov-report xml --junit-xml=test_results
+
+test_api:
+	python test_api/check_api.py
+
+test_ui:
+	py.test -s --verbose test_ui/test_ui.py
