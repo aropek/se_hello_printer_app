@@ -17,3 +17,8 @@ def index():
 @app.route('/outputs')
 def supported_output():
     return ", ".join(SUPPORTED)
+
+from flask import url_for, redirect
+@app.route('/ui')
+def ui():
+    return redirect(url_for('static', filename='index.html'))
