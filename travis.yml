@@ -12,7 +12,9 @@ script:
   - make docker_build
   - make docker_run
   - sleep 3; make test_api
-  - make docker_push
+  - make test_ui # TODO: 3 razy odpytać serwer, sleep 0.5s
+after_success:
+- make docker_push
 
 deploy:
  provider: heroku
